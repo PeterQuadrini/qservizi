@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    font-family: Helvetica;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: white;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.css-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box{
+    position: absolute;
+    top: 0;
+    height: 110vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s infinite;
+  display: inline-block;
+      font-size: 15vw;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200%;
+  }
+}
+
+.bgGreen {
+    background-image: linear-gradient(
+    -225deg,
+    #6f9734 0%,
+    #79A637 20%,
+    #B2F252 30%,
+    #EFF299 50%,
+    #B2F252 70%,
+    #79A637 80%,
+    rgb(111, 151, 52) 100%
+  );
+}
+
+.green{
+    background: rgb(111, 151, 52) 100%;
+}
+
+.bgRed {
+    background-image: linear-gradient(
+        -225deg,
+        #ff7247 0%,
+        #FF9347 20%,
+        #FFCE55 30%,
+        #DDDC51 50%,
+        #FFCE55 70%,
+        #FF9347 80%,
+        rgb(255, 114, 71) 100%
+    );
+}
+
+.red {
+    background: rgb(255, 114, 71) 100%;
+}
+
+.bgBlue {
+    background-image: linear-gradient(
+        -225deg,
+        #65c4dc 0%,
+        #6FB1C1 20%,
+        #A5C5DD 30%,
+        #E6E5E7 50%,
+        #A5C5DD 70%,
+        #6FB1C1 80%,
+        rgb(101, 196, 220) 100%
+    );
+}
+
+.blue {
+    background: rgb(101, 196, 220) 100%;
+}
+
+.title {
+    text-transform: uppercase;
+    color: #fff;
+    background-clip: text;
+    animation: textclip 4s linear infinite;
+    display: inline-block;
+    font-size: 2vh;
+    transition: 0.5s;
+}
+
+.central-box{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.box-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-border {
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.box-border > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center center;
+    z-index: -1;
+}
+
+.box-absolute{
+    position: absolute;
+    top: 0px;
+    width: 100% ;
+    height: 2vh;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vh;
+    color: white;
+    font-weight: bold;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.box-item:hover > .box-border > .box-absolute{
+    height: 100%;
+}
+
+.transition {
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.pag{
+    display: none;
+    transition: 1s;
+    color: white;
+    font-size: 1.5vh;
+    animation: absoluteA 0.5s linear alternate;
+}
+
+@keyframes absoluteA {
+    0% {
+        color: rgba(255, 255, 255, 0);
+        opacity: 0;
+    }
+    100% {
+        color: rgba(255, 255, 255, 1);
+        opacity: 1;
+    }
+}
