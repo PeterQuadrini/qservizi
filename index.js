@@ -20,6 +20,12 @@ setBoxWidth();
 
 function init() {
     try {
+        document.getElementById("video").addEventListener('loadeddata', function() {
+            // Video is loaded and can be played
+            console.log('LOADED')
+            var content = document.getElementById("content");
+            content.style.display = 'inline-block'
+        }, false);
         if (isFirst == true) {
             console.log('HEY HEY')
             currentTitle = 'Food'

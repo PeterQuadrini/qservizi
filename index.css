@@ -3,6 +3,10 @@ body {
     font-family: Helvetica;
 }
 
+.content{
+    display: none;
+}
+
 .header{
     position: fixed;
     top: 0;
