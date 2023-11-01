@@ -14,18 +14,18 @@ var currentTitle2Class = {
     'Ambiente': 'bgGreen',
     'Clean': 'bgBlue',
 }
-init();
 setHeaderWidth();
 setBoxWidth();
+document.getElementById("video").addEventListener('canplaythrough', function() {
+    // Video is loaded and can be played
+    console.log('LOADED')
+    var content = document.getElementById("content");
+    content.style.display = 'inline-block'
+    init()
+}, false);
 
 function init() {
     try {
-        document.getElementById("video").addEventListener('canplaythrough', function() {
-            // Video is loaded and can be played
-            console.log('LOADED')
-            var content = document.getElementById("content");
-            content.style.display = 'inline-block'
-        }, false);
         var headerList = document.getElementById("headerList");
         if (w < 900) {
             headerList.style.display = 'none'
