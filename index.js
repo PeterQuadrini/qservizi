@@ -20,7 +20,7 @@ setBoxWidth();
 
 function init() {
     try {
-        document.getElementById("video").addEventListener('loadeddata', function() {
+        document.getElementById("video").addEventListener('canplaythrough', function() {
             // Video is loaded and can be played
             console.log('LOADED')
             var content = document.getElementById("content");
