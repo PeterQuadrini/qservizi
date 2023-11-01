@@ -26,6 +26,12 @@ function init() {
             var content = document.getElementById("content");
             content.style.display = 'inline-block'
         }, false);
+        var headerList = document.getElementById("headerList");
+        if (w < 900) {
+            headerList.style.display = 'none'
+        } else {
+            headerList.style.display = 'flex'
+        }
         if (isFirst == true) {
             console.log('HEY HEY')
             currentTitle = 'Food'
@@ -83,7 +89,7 @@ function setBoxWidth() {
     var boxBorders = document.getElementsByClassName('box-border')
     console.log('BOX item', boxItems)
     Object.keys(boxBorders).forEach(item => {
-        boxBorders[item].style.width = ((w/divider)) + 'px'
+        boxBorders[item].style.width = ((w/divider) - 3) + 'px'
         var vh = 7 / (100/h)
         boxBorders[item].style.height = ((w/divider) - vh) + 'px'
     })
@@ -103,3 +109,26 @@ function boxItemHover() {
         boxAbsolutes[item].style.height = ((w/divider)) + 'px'
     })
 }
+
+const header = document.getElementById("header");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      header.classList.add("scrolled");
+      header.classList.remove("notScrolled")
+    } else {
+        header.classList.remove("scrolled");
+        header.classList.add("notScrolled")
+    }
+  });
+
+  window.addEventListener("resize", function() {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    if (w < 900) {
+        headerList.style.display = 'none'
+    } else {
+        headerList.style.display = 'flex'
+    }
+    setHeaderWidth()
+    setBoxWidth()
+  });

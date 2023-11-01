@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Helvetica;
+    background-color: black;
 }
 
 .content{
@@ -13,9 +14,60 @@ body {
     width: 100%;
     color: white;
     z-index: 10;
+    height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    animation: fadeInHeader 1s linear alternate;
+}
+
+@keyframes fadeInHeader {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.notScrolled{
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+    animation: fadeOutHeader 1s linear alternate;
+}
+
+@keyframes fadeOutHeader {
+    0% {
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+.logo {
+    height: 7vh;
+}
+
+.headerList{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerList > p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
 }
 
 .css-container {
@@ -86,7 +138,7 @@ video {
 }
 
 .green{
-    background: rgb(111, 151, 52) 100%;
+    background: #3DD862;
 }
 
 .bgRed {
@@ -103,7 +155,7 @@ video {
 }
 
 .red {
-    background: rgb(255, 114, 71) 100%;
+    background: #FF433D;
 }
 
 .bgBlue {
@@ -120,7 +172,7 @@ video {
 }
 
 .blue {
-    background: rgb(101, 196, 220) 100%;
+    background: #1697FD;
 }
 
 .title {
